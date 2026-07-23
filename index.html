@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>klab — K线分析</title>
+    <link rel="stylesheet" href="css/chart.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+</head>
+<body>
+    <header id="app-header">
+        <div class="header-inner">
+            <div class="header-left">
+                <span class="btn-sidebar" onclick="toggleSidebar()">☰</span>
+                <h1 class="header-title">klab</h1>
+                <span class="header-subtitle">SMC K线分析</span>
+            </div>
+        </div>
+        <div id="error-container" class="error-container" style="display:none;"></div>
+    </header>
+
+    <main class="container">
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+        <aside id="sidebar">
+            <div class="side-panel">
+                <details class="side-group" open>
+                    <summary>指数 (<span class="side-count" id="idx-count">-</span>)</summary>
+                    <div id="idx-list" class="side-list"></div>
+                </details>
+            </div>
+            <div class="side-panel">
+                <details class="side-group">
+                    <summary>SMC可买 (<span class="side-count" id="smc-count">-</span>)</summary>
+                    <div id="smc-list" class="side-list"></div>
+                </details>
+            </div>
+        </aside>
+        <div id="main-content">
+            <section id="stock-selection" class="section">
+                <h2>个股分析</h2>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>SMC分析 | 仅供参考，不构成投资建议</p>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/stock-analysis.js"></script>
+</body>
+</html>
